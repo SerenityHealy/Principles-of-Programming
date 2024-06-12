@@ -29,8 +29,9 @@ item2.item_price = float(input("Enter the item price: "))
 item2.item_quantity = int(input("Enter the item quantity: "))
 
 items[item2.item_name] = item2
+
 print("\nTOTAL COST")
-for i, item in enumerate(items.values(), start=1):
+for item in items.values():
     item.print_item_cost()
 total_cost = sum(item.item_price * item.item_quantity for item in items.values())
 print(f"Total Cost: ${total_cost:.2f}")
