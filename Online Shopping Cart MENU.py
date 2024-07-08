@@ -9,6 +9,7 @@ class ItemToPurchase:
         cost = self.item_price * self.item_quantity
         print(f"{self.item_name} {self.item_quantity} @ ${self.item_price:.2f} = ${cost:.2f}")
 
+
 class ShoppingCart:
     def __init__(self, customer_name="none", current_date="January 1, 2020"):
         self.customer_name = customer_name
@@ -52,18 +53,13 @@ class ShoppingCart:
         print(f"Total: ${self.get_cost_of_cart():.2f}")
 
     def print_descriptions(self):
-        print(f"{self.customer_name}'s Shopping Cart - {self.current_date}")
-        print("Item Descriptions")
-        for item in self.cart_items:
-            print(f"{item.item_name}: {item.item_description}")
-
-    def print_descriptions(self):
         print("OUTPUT ITEMS' DESCRIPTIONS")
         print(f"{self.customer_name}'s Shopping Cart - {self.current_date}")
         print()
         print("Item Descriptions")
         for item in self.cart_items:
             print(f"{item.item_name}: {item.item_description}")
+
 
 def print_menu(cart):
     while True:
@@ -96,9 +92,11 @@ def print_menu(cart):
         elif choice == 'o':
             cart.print_total()
         elif choice == 'q':
-            break
+            print("Thank you for using our Shopping Cart. Goodbye!")
+
         else:
             print("Invalid option. Please try again.")
+
 
 if __name__ == "__main__":
     print("Hello, Welcome to The Online Shopping Cart")
